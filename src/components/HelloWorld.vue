@@ -2,32 +2,46 @@
   <div class="hello">
     <h1>{{ message }}</h1>
     <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the jgcjgcjhckhjv,jvh
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
+      <a href="https://cli.vuejs.org" target="_blank" rel="noopener"></a>.
     </p>
-    <h3>Installed CLI Plugins</h3>
   </div>
+  <div>
+  <form @submit.prevent="submitForm">
+    <div>
+      <label for="name">Enter Name:</label>
+      <input type="text" id="name" v-model="form.name" required>
+    </div>
+    <div>
+      <label for="password">Enter your password: </label>
+      <input type="text" id="password" v-model="form.password" required>
+    </div>   
+  </form>
+</div>
 </template>
 
 <script>
+
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String,
+    msg: String
   },
   data() {
     return {
-      message: 'This is mustache syntax',
       arr1: [],
-      obj: {}
+      form: {
+        name: '',
+        password:'',
+      },
     }
   },
   computed: {
 
   },
   methods: {
-
+    submitForm() {
+      console.log(this.form);
+    }
   },
   created() {
 
@@ -46,6 +60,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 h3 {
   margin: 40px 0 0;
 }
