@@ -1,7 +1,7 @@
 <template>
   <div class="flex">
     <!-- Side Navbar -->
-    <v-navigation-drawer app class="bg-green-500" dark>
+    <v-navigation-drawer app class="bg-green-500" color="blue-lighten-5" dark>
       <v-list>
         <ul class="space-y-4">
           <li><router-link class="text-black font-bold hover:text-gray-200 transition-colors" :to="{ name: 'filterById' }">Search By Id</router-link></li>
@@ -12,7 +12,7 @@
     </v-navigation-drawer>
   </div>
   <div class="flex-1 p-8">
-    <v-toolbar  color="green">
+    <v-toolbar  color="blue-lighten-4">
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
       <v-toolbar-title>Hang</v-toolbar-title>
       <v-spacer></v-spacer>
