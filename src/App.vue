@@ -1,11 +1,14 @@
 <template>
-  <router-view></router-view>
+  <!-- <nav>
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link>
+
+  </nav> -->
+  <v-app>
+  <router-view/>
+</v-app>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style>
-/* Add any custom styles for the App component here */
+
 </style>

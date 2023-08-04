@@ -1,10 +1,7 @@
-import { createApp } from 'vue';
-import App from './App.vue';
-import LoginView from './components/LoginView.vue';
-import SignupView from './components/SignupView.vue';
-import { createRouter, createWebHistory } from 'vue-router';
-
-// Vuetify
+import { createApp } from 'vue'
+import App from './App.vue'
+import router from './router'
+import store from './store'
 import 'vuetify/styles';
 import { createVuetify } from 'vuetify';
 import * as components from 'vuetify/components';
@@ -15,17 +12,12 @@ const vuetify = createVuetify({
   directives,
 });
 
-// Create a new Vue Router instance
-const router = createRouter({
-  history: createWebHistory(),
-  routes: [
-    { path: '/', component: LoginView },
-    { path: '/signup', component: SignupView },
-  ],
-});
+// Create the app instance
+const app = createApp(App)
 
-const app = createApp(App);
-app.use(vuetify);
-app.use(router); // Use the router instance
-
-app.mount('#app');
+// Use Vuetify
+app.use(vuetify)
+// Mount the app to the #app element
+app.use(store)
+app.use(router)
+app.mount('#app')

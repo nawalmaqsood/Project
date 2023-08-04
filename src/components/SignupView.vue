@@ -47,7 +47,7 @@ export default {
     emailRules() {
       return [
         value => !!value || 'Email is required.',
-        value => /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value) || 'Invalid email format.'
+        //value => /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value) || 'Invalid email format.'
       ];
     },
     passwordRules() {
@@ -62,10 +62,10 @@ export default {
         value => value === this.password || 'Passwords do not match.'
       ];
     }
+
   },
   methods: {
     signup() {
-      // If signup is successful, store the user details in the local storage
       const storedUsers = JSON.parse(localStorage.getItem('users')) || [];
       storedUsers.push({
         username: this.username,
@@ -74,7 +74,6 @@ export default {
       });
       localStorage.setItem('users', JSON.stringify(storedUsers));
 
-      // Notify the parent component about successful signup
       this.$emit('signup-success', { username: this.username, email: this.email });
     }
   }
